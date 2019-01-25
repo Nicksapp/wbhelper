@@ -1,6 +1,6 @@
 {
   "name": "wbhelper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "workbench develpoment helper tool",
   "main": "index.js",
   "bin": {
@@ -19,14 +19,8 @@
     "ora": "3.0.0",
     "mockjs": "1.0.1-beta3",
     "data-store": "3.1.0",
-    "figlet": "1.2.1"
-  },
-  "devDependencies": {
-    "cli-table": "0.3.1",
-    "download-git-repo": "1.1.0",
-    "netlify-cli": "2.6.1",
-    "querystring": "0.2.0",
-    "yargs": "12.0.5"
+    "figlet": "1.2.1",
+    "cli-table": "0.3.1"
   },
   "directories": {
     "lib": "lib",
