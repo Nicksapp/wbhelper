@@ -1,12 +1,12 @@
 {
-  "name": "common-bin-demo",
+  "name": "wbhelper",
   "version": "1.0.0",
-  "description": "",
+  "description": "workbench develpoment helper tool",
   "main": "index.js",
   "bin": {
     "wbhelper": "bin/ever-cli.js"
   },
-  "author": "",
+  "author": "changjie",
   "license": "ISC",
   "dependencies": {
     "axios": "0.18.0",
