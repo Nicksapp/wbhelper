@@ -1,0 +1,71 @@
+{{#if isInit}}
+/**
+ * 类名：{{className}}
+ */
+import { RPCService } from '@kapp/dubbojs';
+
+class {{className}}Service extends RPCService {
+  static config(groups) {
+    return {
+      interface: '{{facadeName}}',
+      jsonRpcVersion: '2.0',
+      group: groups.default,
+      protocol: 'jsonrpc',
+      timeout: 3000,
+      // 可选
+      pool: {
+        min: 2,
+        max: 10,
+        maxWaitingClients: 10,
+        keepAlive: true
+      }
+    }
+  };
+
+  {{#each data}}
+  /* wbneicontrol: on */
+  public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}) {
+    return this.invoke('{{path}}', [
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    ], [], {
+        retry: 5,
+        mock: {
+          resCode: 501,
+          resDesc: '远程服务无响应'
+        }
+      });
+  }
+
+  {{/each}}
+}
+
+export default {{className}}Service;
+{{else}}
+  {{#if isMethodInit}}
+  
+  /* wbneicontrol: on */
+  public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}) {
+    return this.invoke('{{path}}', [
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    ], [], {
+        retry: 5,
+        mock: {
+          resCode: 501,
+          resDesc: '远程服务无响应'
+        }
+      });
+  }
+  {{else}}
+public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}) {
+    return this.invoke('{{path}}', [
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    ], [], {
+        retry: 5,
+        mock: {
+          resCode: 501,
+          resDesc: '远程服务无响应'
+        }
+      });
+  }
+  {{/if}}
+{{/if}}

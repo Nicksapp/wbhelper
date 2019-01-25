@@ -1,0 +1,21 @@
+{{#if isInit}}
+import { Application } from 'egg';
+
+export default (app: Application) => {
+  const { controller, router } = app;
+
+  const parseRpc = app.middleware.parseRpc();
+
+  {{#each data}}
+  // {{description}}-{{../className}}.{{path}}
+  router.{{requestMethods}}('/api/{{../className}}/{{path}}', parseRpc, controller.wbnei.{{../className}}.{{path}});
+  {{/each}}
+
+}
+{{else}}
+
+{{#each data}}
+  // {{name}}-{{../className}}.{{path}}
+  router.{{requestMethods}}('/api/{{../className}}/{{path}}', parseRpc, controller.wbnei.{{../className}}.{{path}});
+{{/each}}
+{{/if}}

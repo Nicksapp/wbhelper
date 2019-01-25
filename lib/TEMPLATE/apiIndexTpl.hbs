@@ -1,0 +1,9 @@
+{{#each data}}
+import * as {{facadeName}} from './{{facadeName}}';
+{{/each}}
+
+export {
+{{#each data}}
+  {{facadeName}}{{#if @last}}{{else}}, {{/if}}
+{{/each}}
+};

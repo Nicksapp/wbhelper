@@ -1,0 +1,49 @@
+{{#if isInit}}
+/**
+ * Controller
+ * 类名：{{facadeName}}
+ */
+import { Controller } from 'egg';
+
+export default class {{className}}Controller extends Controller {
+  
+  {{#each data}}
+  /* wbneicontrol: on */
+  async {{path}}() {
+    const {
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    } = this.ctx.query;
+
+    this.ctx.body = await this.ctx.service.wbnei.{{../className}}.{{path}}(
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    );
+  }
+
+  {{/each}}
+
+}
+{{else}}
+  {{#if isMethodInit}}
+
+  /* wbneicontrol: on */
+  async {{path}}() {
+    const {
+        {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    } = this.ctx.query;
+
+    this.ctx.body = await this.ctx.service.wbnei.{{className}}.{{path}}(
+        {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    );
+  }
+  {{else}}
+async {{path}}() {
+    const {
+        {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    } = this.ctx.query;
+
+    this.ctx.body = await this.ctx.service.wbnei.{{className}}.{{path}}(
+        {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+    );
+  }
+  {{/if}}
+{{/if}}

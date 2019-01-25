@@ -1,0 +1,44 @@
+{{#if isInit}}
+/**
+ * 类名：{{facadeName}}
+ */
+import ajax from '@/common/utils/ajax';
+
+{{#each data}}
+/* wbneicontrol: on */
+export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/isEqual}}) {
+  return ajax.{{requestMethods}}('/api/{{className}}/{{path}}', {
+    {{#isEqual requestMethods 'get'}}
+      params
+    {{else}}
+      data
+    {{/isEqual}}
+  });
+}
+
+{{/each}}
+{{else}}
+  {{#if isMethodInit}}
+
+/* wbneicontrol: on */
+export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/isEqual}}) {
+  return ajax.{{requestMethods}}('/api/{{className}}/{{path}}', {
+    {{#isEqual requestMethods 'get'}}
+      params
+    {{else}}
+      data
+    {{/isEqual}}
+  });
+}
+  {{else}}
+export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/isEqual}}) {
+  return ajax.{{requestMethods}}('/api/{{className}}/{{path}}', {
+    {{#isEqual requestMethods 'get'}}
+      params
+    {{else}}
+      data
+    {{/isEqual}}
+  });
+}
+  {{/if}}
+{{/if}}

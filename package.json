@@ -1,0 +1,31 @@
+{
+  "name": "common-bin-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "wbhelper": "bin/ever-cli.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.18.0",
+    "common-bin": "2.8.0",
+    "handlebars": "4.0.12"
+  },
+  "devDependencies": {
+    "chalk": "2.4.1",
+    "cli-table": "0.3.1",
+    "crypto": "1.0.1",
+    "data-store": "3.1.0",
+    "download-git-repo": "1.1.0",
+    "enquirer": "2.3.0",
+    "express": "4.16.4",
+    "figlet": "1.2.1",
+    "mockjs": "1.0.1-beta3",
+    "netlify-cli": "2.6.1",
+    "ora": "3.0.0",
+    "querystring": "0.2.0",
+    "yargs": "12.0.5"
+  }
+}
