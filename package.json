@@ -11,21 +11,39 @@
   "dependencies": {
     "axios": "0.18.0",
     "common-bin": "2.8.0",
-    "handlebars": "4.0.12"
-  },
-  "devDependencies": {
+    "handlebars": "4.0.12",
     "chalk": "2.4.1",
-    "cli-table": "0.3.1",
     "crypto": "1.0.1",
-    "data-store": "3.1.0",
-    "download-git-repo": "1.1.0",
     "enquirer": "2.3.0",
     "express": "4.16.4",
-    "figlet": "1.2.1",
-    "mockjs": "1.0.1-beta3",
-    "netlify-cli": "2.6.1",
     "ora": "3.0.0",
+    "mockjs": "1.0.1-beta3",
+    "data-store": "3.1.0",
+    "figlet": "1.2.1"
+  },
+  "devDependencies": {
+    "cli-table": "0.3.1",
+    "download-git-repo": "1.1.0",
+    "netlify-cli": "2.6.1",
     "querystring": "0.2.0",
     "yargs": "12.0.5"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicksapp/wbhelper.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "bugs": {
+    "url": "https://github.com/Nicksapp/wbhelper/issues"
+  },
+  "homepage": "https://github.com/Nicksapp/wbhelper#readme"
 }
