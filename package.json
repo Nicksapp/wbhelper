@@ -1,6 +1,6 @@
 {
   "name": "wbhelper",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "workbench develpoment helper tool",
   "main": "index.js",
   "bin": {
@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/Nicksapp/wbhelper#readme",
   "devDependencies": {
-    "socket.io": "2.2.0"
+    "socket.io": "2.2.0",
+    "ws": "6.1.3"
   }
 }
