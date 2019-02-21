@@ -10,13 +10,15 @@ export default class {{className}}Controller extends Controller {
   {{#each data}}
   /* wbneicontrol: on */
   async {{path}}() {
+    {{#if inputParams.length}}
     const {
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
     } = this.ctx.query;
-
-    this.ctx.body = await this.ctx.service.wbnei.{{../className}}.{{path}}(
+    
+    {{/if}}
+    this.ctx.body = await this.ctx.service.wbnei.{{../className}}.{{path}}{{#if inputParams.length}}(
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    );
+    ){{else}}(){{/if}};
   }
 
   {{/each}}
@@ -27,23 +29,27 @@ export default class {{className}}Controller extends Controller {
 
   /* wbneicontrol: on */
   async {{path}}() {
+    {{#if inputParams.length}}
     const {
-        {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
     } = this.ctx.query;
 
-    this.ctx.body = await this.ctx.service.wbnei.{{className}}.{{path}}(
+    {{/if}}
+    this.ctx.body = await this.ctx.service.wbnei.{{className}}.{{path}}{{#if inputParams.length}}(
         {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    );
+    ){{else}}(){{/if}};
   }
   {{else}}
 async {{path}}() {
+    {{#if inputParams.length}}
     const {
-        {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
     } = this.ctx.query;
 
-    this.ctx.body = await this.ctx.service.wbnei.{{className}}.{{path}}(
+    {{/if}}
+    this.ctx.body = await this.ctx.service.wbnei.{{className}}.{{path}}{{#if inputParams.length}}(
         {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    );
+    ){{else}}(){{/if}};
   }
   {{/if}}
 {{/if}}

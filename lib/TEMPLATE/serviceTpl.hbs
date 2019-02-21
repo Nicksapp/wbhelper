@@ -25,15 +25,15 @@ class {{className}}Service extends RPCService {
   {{#each data}}
   /* wbneicontrol: on */
   public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}) {
-    return this.invoke('{{path}}', [
+    return this.invoke('{{path}}', {{#if inputParams.length}}[
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    ], [], {
-        retry: 5,
-        mock: {
-          resCode: 501,
-          resDesc: '远程服务无响应'
-        }
-      });
+    ]{{else}}[]{{/if}}, [], {
+      retry: 3,
+      mock: {
+        resCode: 501,
+        resDesc: '远程服务无响应'
+      }
+    });
   }
 
   {{/each}}
@@ -45,27 +45,27 @@ export default {{className}}Service;
   
   /* wbneicontrol: on */
   public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}) {
-    return this.invoke('{{path}}', [
+    return this.invoke('{{path}}', {{#if inputParams.length}}[
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    ], [], {
-        retry: 5,
-        mock: {
-          resCode: 501,
-          resDesc: '远程服务无响应'
-        }
-      });
+    ]{{else}}[]{{/if}}, [], {
+      retry: 3,
+      mock: {
+        resCode: 501,
+        resDesc: '远程服务无响应'
+      }
+    });
   }
   {{else}}
 public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}) {
-    return this.invoke('{{path}}', [
+    return this.invoke('{{path}}', {{#if inputParams.length}}[
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    ], [], {
-        retry: 5,
-        mock: {
-          resCode: 501,
-          resDesc: '远程服务无响应'
-        }
-      });
+    ]{{else}}[]{{/if}}, [], {
+      retry: 3,
+      mock: {
+        resCode: 501,
+        resDesc: '远程服务无响应'
+      }
+    });
   }
   {{/if}}
 {{/if}}
