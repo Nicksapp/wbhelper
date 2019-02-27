@@ -1,8 +1,12 @@
 {
   "nei_config": {
-    "controller_placement": "server/app/controller/wbnei",
-    "service_placement": "server/app/service/wbnei",
-    "api_placement": "client/src/api/wbnei",
+    "controller_placement": "server/app/controller",
+    "service_placement": "server/app/service",
+    "api_placement": "client/src/api",
     "router_placement": "server/app/nei"
+  },
+  "vue_config": {
+    "view_placement": "client/src/views",
+    "component_placement": "client/src/components"
   }
 }

@@ -7,7 +7,7 @@ export default (app: Application) => {
   const parseRpc = app.middleware.parseRpc();
 
   {{#each data}}
-  // {{description}}-{{../className}}.{{path}}
+  // {{name}}
   router.{{requestMethods}}('/api/{{../className}}/{{path}}', parseRpc, controller.wbnei.{{../className}}.{{path}});
   {{/each}}
 
@@ -15,7 +15,7 @@ export default (app: Application) => {
 {{else}}
 
 {{#each data}}
-  // {{name}}-{{../className}}.{{path}}
+  // {{name}}
   router.{{requestMethods}}('/api/{{../className}}/{{path}}', parseRpc, controller.wbnei.{{../className}}.{{path}});
 {{/each}}
 {{/if}}

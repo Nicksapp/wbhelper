@@ -22,7 +22,7 @@ export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/i
 
 /* wbneicontrol: on */
 export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/isEqual}}) {
-  return ajax.{{requestMethods}}('/api/{{../className}}/{{path}}', {
+  return ajax.{{requestMethods}}('/api/{{className}}/{{path}}', {
     {{#isEqual requestMethods 'get'}}
       params
     {{else}}
@@ -32,7 +32,7 @@ export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/i
 }
   {{else}}
 export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/isEqual}}) {
-  return ajax.{{requestMethods}}('/api/{{../className}}/{{path}}', {
+  return ajax.{{requestMethods}}('/api/{{className}}/{{path}}', {
     {{#isEqual requestMethods 'get'}}
       params
     {{else}}
