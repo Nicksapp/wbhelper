@@ -7,6 +7,7 @@
   },
   "vue_config": {
     "view_placement": "client/src/views",
-    "component_placement": "client/src/components"
+    "component_placement": "client/src/components",
+    "billTable_placement": "client/src/views/workbench-bill"
   }
 }

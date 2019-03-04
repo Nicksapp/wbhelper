@@ -1,0 +1,68 @@
+<template>
+    <div class="m-{{name}}">
+        <order-table-layout 
+            :tableLoading="tableLoading"
+            :pageFrom="pageFrom"
+            :tableSource="tableSource"
+            :layoutOptions="layoutOptions"
+            :currentPageNo.sync="currentPage[`${currentTabData.tabnavActiveName}-${currentTabData.inlineTabnavActiveName}`]"
+            @onSearch="handleSearchParam"
+            @onTabClick="handleTabClick"
+            @onPageChange="handlePageChange"
+            @onSearchParamChange="handleSearchParamChange"
+            @onToDetail="handleToDetail"
+            />
+    </div>
+</template>
+
+<script>
+/**
+ * {{fileName}}
+ * description: {{description}}
+ * anthor: {{author}}
+ * createdAt: {{date}}
+*/
+import baseBillTableMixin from '@/components/mixins/bills-table/base';
+import Config from './config.js';
+
+export default {
+    name: '{{name}}',
+    mixins: [baseBillTableMixin],
+    data() {
+        return {
+            layoutOptions: Config.layoutOptions,
+            tableLoading: false,
+            pageFrom: ''
+        }
+    },
+    async created() {
+        await this.initData();
+    },
+    methods: {
+        // 初始化数据加载
+        async initData() {
+
+        },
+        // 搜索回调
+        handleSearchParam({ param }) {
+
+        },
+        // tab 切换回调
+        handleTabClick({ tabnavActiveName, inlineTabnavActiveName }) {
+
+        },
+        // 分页回调
+        handlePageChange(pageVal, curTab) {
+
+        },
+        // 搜索参数变更回调
+        handleSearchParamChange() {
+
+        },
+        // 详情跳转回调
+        handleToDetail($event) {
+
+        }
+    }
+}
+</script>

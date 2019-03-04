@@ -1,0 +1,91 @@
+/**
+ * {{fileName}} 单据模块页面结构配置项
+ * description: {{description}}
+ * anthor: {{author}}
+ * createdAt: {{date}}
+ */
+
+const layoutOptions = {
+    pageName: '{{name}}',
+    options: [{
+        // tabnav
+        tabnavName: '一级Tab1', // 一级 tab 菜单
+        orderNum: null, // tab 关联数字
+        searchPlaceOption: { // 搜索区域 option
+            relativeTab: '一级Tab1',
+            layout: []
+        }, 
+        orderTableOption: [{
+            tabName: 'tab1',
+            orderTabnavName: '二级Tab1', // 二级 tab 菜单名
+            orderNum: null, // 子 tab 关联数字
+            orderTableDataOption: { // 表格显示项配置
+                source: [],
+                actionsList: ['DETAIL'], // 操作显示项
+                excludeColumnsList: [] // 表格不显示列
+            }
+        }, {
+            tabName: 'tab2',
+            orderTabnavName: '二级Tab2', // 二级 tab 菜单名
+            orderNum: null, // 子 tab 关联数字
+            orderTableDataOption: { // 表格显示项配置
+                source: [],
+                actionsList: ['DETAIL'], // 操作显示项
+                excludeColumnsList: [] // 表格不显示列
+            }
+        }, {
+            tabName: 'tab3',
+            orderTabnavName: '二级Tab3', // 二级 tab 菜单名
+            orderNum: null, // 子 tab 关联数字
+            orderTableDataOption: { // 表格显示项配置
+                source: [],
+                actionsList: ['DETAIL'], // 操作显示项
+                excludeColumnsList: [] // 表格不显示列
+            }
+        }],
+    }, {
+         // tabnav
+        tabnavName: '一级Tab2', // 一级 tab 菜单
+        orderNum: null, // tab 关联数字
+        searchPlaceOption: { // 搜索区域 option
+            relativeTab: '一级Tab2',
+            layout: []
+        }, 
+        orderTableOption: [{
+            tabName: 'tab1',
+            orderTabnavName: '二级Tab1', // 二级 tab 菜单名
+            orderNum: null, // 子 tab 关联数字
+            orderTableDataOption: { // 表格显示项配置
+                source: [],
+                actionsList: ['DETAIL'], // 操作显示项
+                excludeColumnsList: [] // 表格不显示列
+            }
+        }],
+    }],
+    tableColumnSource: [{
+        label: '单号',
+        prop: 'applyId',
+    }, {
+        label: '用户账号',
+        prop: 'accountNo',
+    }, {
+        label: '信用等级',
+        prop: 'creditLevel',
+    }, {
+        label: '会员等级',
+        prop: 'level',
+    }, {
+        label: '时间',
+        prop: 'assignTime',
+        isSortable: true,
+        isTime: true
+    }, {
+        label: '操作',
+        prop: 'action',
+        isActionCell: true
+    }]
+}
+ 
+export default {
+    layoutOptions
+};
