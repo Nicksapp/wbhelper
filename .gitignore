@@ -1,3 +1,5 @@
 lib/command/other
 node_modules/
 test_ignore
+data/newCache.json
+data/qiyuConfig.json
