@@ -16,7 +16,7 @@ export default class {{className}}Controller extends Controller {
     } = this.ctx.query;
     
     {{/if}}
-    this.ctx.body = await this.ctx.service.wbnei.{{../className}}.{{path}}{{#if inputParams.length}}(
+    this.ctx.body = await this.ctx.service.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{../className}}.{{path}}{{#if inputParams.length}}(
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
     ){{else}}(){{/if}};
   }
@@ -35,7 +35,7 @@ export default class {{className}}Controller extends Controller {
     } = this.ctx.query;
 
     {{/if}}
-    this.ctx.body = await this.ctx.service.wbnei.{{className}}.{{path}}{{#if inputParams.length}}(
+    this.ctx.body = await this.ctx.service.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{className}}.{{path}}{{#if inputParams.length}}(
         {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
     ){{else}}(){{/if}};
   }
@@ -47,7 +47,7 @@ async {{path}}() {
     } = this.ctx.query;
 
     {{/if}}
-    this.ctx.body = await this.ctx.service.wbnei.{{className}}.{{path}}{{#if inputParams.length}}(
+    this.ctx.body = await this.ctx.service.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{className}}.{{path}}{{#if inputParams.length}}(
         {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
     ){{else}}(){{/if}};
   }

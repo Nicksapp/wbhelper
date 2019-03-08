@@ -8,7 +8,7 @@ export default (app: Application) => {
 
   {{#each data}}
   // {{name}}
-  router.{{requestMethods}}('/api/{{../className}}/{{path}}', parseRpc, controller.wbnei.{{../className}}.{{path}});
+  router.{{requestMethods}}('/api/{{../className}}/{{path}}', parseRpc, controller.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{../className}}.{{path}});
   {{/each}}
 
 }
@@ -16,6 +16,6 @@ export default (app: Application) => {
 
 {{#each data}}
   // {{name}}
-  router.{{requestMethods}}('/api/{{../className}}/{{path}}', parseRpc, controller.wbnei.{{../className}}.{{path}});
+  router.{{requestMethods}}('/api/{{../className}}/{{path}}', parseRpc, controller.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{../className}}.{{path}});
 {{/each}}
 {{/if}}
