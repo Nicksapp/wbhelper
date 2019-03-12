@@ -8,6 +8,7 @@ import { Controller } from 'egg';
 export default class {{className}}Controller extends Controller {
   
   {{#each data}}
+  /* {{name}} */
   /* wbneicontrol: on */
   async {{path}}() {
     {{#if inputParams.length}}
@@ -27,6 +28,7 @@ export default class {{className}}Controller extends Controller {
 {{else}}
   {{#if isMethodInit}}
 
+  /* {{name}} */
   /* wbneicontrol: on */
   async {{path}}() {
     {{#if inputParams.length}}

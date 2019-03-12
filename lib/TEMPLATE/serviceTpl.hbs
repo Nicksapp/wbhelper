@@ -23,6 +23,7 @@ class {{className}}Service extends RPCService {
   };
 
   {{#each data}}
+  /* {{name}} */
   /* wbneicontrol: on */
   public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}) {
     return this.invoke('{{path}}', {{#if inputParams.length}}[
@@ -30,8 +31,8 @@ class {{className}}Service extends RPCService {
     ]{{else}}[]{{/if}}, [], {
       retry: 3,
       mock: {
-        resCode: 501,
-        resDesc: '远程服务无响应'
+        retCode: 501,
+        retDesc: '远程服务无响应'
       }
     });
   }
@@ -43,6 +44,7 @@ export default {{className}}Service;
 {{else}}
   {{#if isMethodInit}}
   
+  /* {{name}} */
   /* wbneicontrol: on */
   public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}) {
     return this.invoke('{{path}}', {{#if inputParams.length}}[
@@ -50,8 +52,8 @@ export default {{className}}Service;
     ]{{else}}[]{{/if}}, [], {
       retry: 3,
       mock: {
-        resCode: 501,
-        resDesc: '远程服务无响应'
+        retCode: 501,
+        retDesc: '远程服务无响应'
       }
     });
   }
@@ -62,8 +64,8 @@ public async {{path}}({{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}
     ]{{else}}[]{{/if}}, [], {
       retry: 3,
       mock: {
-        resCode: 501,
-        resDesc: '远程服务无响应'
+        retCode: 501,
+        retDesc: '远程服务无响应'
       }
     });
   }
