@@ -5,13 +5,14 @@
 import ajax from '@/common/utils/ajax';
 
 {{#each data}}
+/* {{name}} */
 /* wbneicontrol: on */
 export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/isEqual}}) {
   return ajax.{{requestMethods}}('/api/{{../className}}/{{path}}', {
     {{#isEqual requestMethods 'get'}}
-      params
+    params
     {{else}}
-      data
+    data
     {{/isEqual}}
   });
 }
@@ -20,13 +21,14 @@ export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/i
 {{else}}
   {{#if isMethodInit}}
 
+/* {{name}} */
 /* wbneicontrol: on */
 export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/isEqual}}) {
   return ajax.{{requestMethods}}('/api/{{className}}/{{path}}', {
     {{#isEqual requestMethods 'get'}}
-      params
+    params
     {{else}}
-      data
+    data
     {{/isEqual}}
   });
 }
@@ -34,9 +36,9 @@ export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/i
 export function {{path}}({{#isEqual requestMethods 'get'}}params{{else}}data{{/isEqual}}) {
   return ajax.{{requestMethods}}('/api/{{className}}/{{path}}', {
     {{#isEqual requestMethods 'get'}}
-      params
+    params
     {{else}}
-      data
+    data
     {{/isEqual}}
   });
 }

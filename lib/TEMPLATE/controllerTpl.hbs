@@ -38,7 +38,7 @@ export default class {{className}}Controller extends Controller {
 
     {{/if}}
     this.ctx.body = await this.ctx.service.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{className}}.{{path}}{{#if inputParams.length}}(
-        {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
     ){{else}}(){{/if}};
   }
   {{else}}
@@ -50,7 +50,7 @@ async {{path}}() {
 
     {{/if}}
     this.ctx.body = await this.ctx.service.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{className}}.{{path}}{{#if inputParams.length}}(
-        {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
+      {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
     ){{else}}(){{/if}};
   }
   {{/if}}

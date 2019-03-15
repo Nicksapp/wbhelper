@@ -4,6 +4,7 @@
     "service_placement": "server/app/service",
     "api_placement": "client/src/api/wbnei",
     "router_placement": "server/app/nei",
+    "mock_placement": "server/mock",
     "prefixName": ""
   },
   "vue_config": {
