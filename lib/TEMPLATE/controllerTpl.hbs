@@ -14,7 +14,7 @@ export default class {{className}}Controller extends Controller {
     {{#if inputParams.length}}
     const {
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    } = this.ctx.query;
+    } = this.ctx.{{#isEqual requestMethods 'get'}}query{{else}}request.body{{/isEqual}};
     
     {{/if}}
     this.ctx.body = await this.ctx.service.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{../className}}.{{path}}{{#if inputParams.length}}(
@@ -34,7 +34,7 @@ export default class {{className}}Controller extends Controller {
     {{#if inputParams.length}}
     const {
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    } = this.ctx.query;
+    } = this.ctx.{{#isEqual requestMethods 'get'}}query{{else}}request.body{{/isEqual}};
 
     {{/if}}
     this.ctx.body = await this.ctx.service.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{className}}.{{path}}{{#if inputParams.length}}(
@@ -46,7 +46,7 @@ async {{path}}() {
     {{#if inputParams.length}}
     const {
       {{#each inputParams}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}
-    } = this.ctx.query;
+    } = this.ctx.{{#isEqual requestMethods 'get'}}query{{else}}request.body{{/isEqual}};
 
     {{/if}}
     this.ctx.body = await this.ctx.service.{{#if ../prefixName}}{{../prefixName}}.{{/if}}{{className}}.{{path}}{{#if inputParams.length}}(
