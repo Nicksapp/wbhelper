@@ -84,10 +84,10 @@ $ wbhelper -h
 Usage: wbhelper <command> [options]
 
 命令：
-  ever-cli.js completion  generate bash completion script
-  ever-cli.js nei         Get the Api info from Nei, choose to generate common code.
-  ever-cli.js new         快速生成通用模板代码文件
-  ever-cli.js qiyu        Clone a repository into a new directory
+  wbhelper completion  generate bash completion script
+  wbhelper nei         Get the Api info from Nei, choose to generate common code.
+  wbhelper new         快速生成通用模板代码文件
+  wbhelper qiyu        Clone a repository into a new directory
 
 Global Options:
   -h, --help     显示帮助信息                                                                                     [布尔]
