@@ -72,7 +72,7 @@ $ wbhelper -h
   }
 }
 ```
-##
+## USE
 
 ```bash
  __        __ ____   _   _        _
@@ -93,3 +93,12 @@ Global Options:
   -h, --help     显示帮助信息                                                                                     [布尔]
   -v, --version  显示版本号                                                                                       [布尔]
 ```
+
+## PREVIEW
+
+代码生成
+![](https://haitao.nos.netease.com/ebb2242a-bbf5-4c32-8b60-88f97ea5d479_1198_776.gif)
+
+
+代码覆盖
+![](https://haitao.nos.netease.com/7a4bbc28-f4f1-4292-8064-f3066b39bd22_600_378.gif)
